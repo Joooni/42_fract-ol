@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   controls_keyboard.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsubel < jsubel@student.42wolfsburg.de >   +#+  +:+       +#+        */
+/*   By: jsubel <jsubel@student.42wolfsburg.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 11:19:48 by jsubel            #+#    #+#             */
-/*   Updated: 2022/03/29 09:41:20 by jsubel           ###   ########.fr       */
+/*   Updated: 2022/03/30 15:16:15 by jsubel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
