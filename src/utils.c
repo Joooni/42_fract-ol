@@ -6,7 +6,7 @@
 /*   By: jsubel <jsubel@student.42wolfsburg.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 10:31:29 by jsubel            #+#    #+#             */
-/*   Updated: 2022/03/10 09:52:46 by jsubel           ###   ########.fr       */
+/*   Updated: 2022/03/30 13:51:51 by jsubel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,22 +51,6 @@ int	(*get_set(char *name)) (t_fractal *fractal)
 		i++;
 	}
 	return (set);
-}
-
-t_color	color_fractal(int iteration, t_fractal *fractal)
-{
-	t_color	color;
-	double	t;
-
-	t = (double)iteration / fractal->max_iteration;
-	color.channel[0] = 0;
-	color.channel[(0 + fractal->color_shift) % 3 + 1]
-		= (int8_t)(9 * (1 - t) * pow(t, 3) * 255);
-	color.channel[(1 + fractal->color_shift) % 3 + 1]
-		= (int8_t)(15 * pow((1 - t), 2) * pow(t, 2) * 255);
-	color.channel[(2 + fractal->color_shift) % 3 + 1]
-		= (int8_t)(8.5 * pow((1 - t), 3) * t * 255);
-	return (color);
 }
 
 void	print_invalid_parameters(void)

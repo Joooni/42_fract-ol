@@ -6,7 +6,7 @@
 /*   By: jsubel <jsubel@student.42wolfsburg.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 12:34:45 by jsubel            #+#    #+#             */
-/*   Updated: 2022/03/30 09:20:35 by jsubel           ###   ########.fr       */
+/*   Updated: 2022/03/30 13:58:24 by jsubel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,20 @@ void	string_put(t_fractal *fractal)
 		WINDOW_WIDTH - 40, WINDOW_HEIGHT - 40, 0x444444,
 		str);
 	free(str);
+}
+
+t_color	color_fractal(int iteration, t_fractal *fractal)
+{
+	t_color	color;
+	double	t;
+
+	t = (double)iteration / fractal->max_iteration;
+	color.channel[0] = 0;
+	color.channel[(0 + fractal->color_shift) % 3 + 1]
+		= (uint8_t)(9 * (1 - t) * pow(t, 3) * 255);
+	color.channel[(1 + fractal->color_shift) % 3 + 1]
+		= (uint8_t)(15 * pow((1 - t), 2) * pow(t, 2) * 255);
+	color.channel[(2 + fractal->color_shift) % 3 + 1]
+		= (uint8_t)(8.5 * pow((1 - t), 3) * t * 255);
+	return (color);
 }
