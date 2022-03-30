@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   keys.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsubel <jsubel@student.42wolfsburg.de >    +#+  +:+       +#+        */
+/*   By: jsubel < jsubel@student.42wolfsburg.de >   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 08:23:53 by jsubel            #+#    #+#             */
-/*   Updated: 2022/03/30 08:58:39 by jsubel           ###   ########.fr       */
+/*   Updated: 2022/03/30 19:46:44 by jsubel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 #  define ARROW_LEFT		0xff51
 #  define ARROW_RIGHT		0xff53
-#  define ARROW_UP			0xff52
-#  define ARROW_DOWN		0xff54
+#  define ARROW_UP			0xff54
+#  define ARROW_DOWN		0xff52
 
 #  define MOUSE_UP			5
 #  define MOUSE_DOWN		4
