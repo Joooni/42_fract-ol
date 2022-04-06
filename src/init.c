@@ -6,7 +6,7 @@
 /*   By: jsubel <jsubel@student.42wolfsburg.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 10:00:43 by jsubel            #+#    #+#             */
-/*   Updated: 2022/03/30 09:50:31 by jsubel           ###   ########.fr       */
+/*   Updated: 2022/04/04 08:54:25 by jsubel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,10 @@ t_fractal	*init_fractal(char *name, void *mlx)
 	default_fractal(fractal);
 	fractal->set = get_set(name);
 	if (fractal->set == NULL)
-		end_process(ERR_SET_NAME);
+	{
+		print_invalid_parameters();
+		exit(1);
+	}
 	mlx_hook(fractal->win, 2, 1L << 0, key_press, fractal);
 	mlx_mouse_hook(fractal->win, zoom, fractal);
 	mlx_hook(fractal->win, 17, 0, kill_fractol, fractal);

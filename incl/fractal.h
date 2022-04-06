@@ -6,7 +6,7 @@
 /*   By: jsubel <jsubel@student.42wolfsburg.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 15:33:37 by jsubel            #+#    #+#             */
-/*   Updated: 2022/03/28 15:29:48 by jsubel           ###   ########.fr       */
+/*   Updated: 2022/04/05 09:51:07 by jsubel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,17 +103,17 @@ t_image		init_window(void *mlx);
 t_fractal	*init_fractal(char *name, void *mlx);
 void		default_fractal(t_fractal *fractal);
 
-//		calculate fractal sets
+//			calculate fractal sets
 int			iterate_mandelbrot(t_fractal *fractal);
 int			iterate_julia(t_fractal *fractal);
 int			iterate_burningship(t_fractal *fractal);
 
-//	draw functions
+//			draw functions
 void		draw_fractal(t_fractal *fractal);
 void		mlx_pixel_put_img(t_fractal *fractal, int x, int y, t_color color);
 int			create_trgb(int t, int r, int g, int b);
 
-//	utilities
+//			utilities
 void		end_process(char *s);
 int			(*get_set(char *name))(t_fractal *fractal);
 t_color		color_fractal(int iteration, t_fractal *fractal);
@@ -121,7 +121,7 @@ void		print_invalid_parameters(void);
 void		string_put(t_fractal *fractal);
 int			kill_fractol(t_fractal *fractal);
 
-// controls
+//			controls
 int			zoom(int mouse_code, int x, int y, t_fractal *fractal);
 int			key_press(int keycode, t_fractal *fractal);
 int			julia_mouse_controls(int x, int y, t_fractal *fractal);

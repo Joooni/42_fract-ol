@@ -6,7 +6,7 @@
 /*   By: jsubel <jsubel@student.42wolfsburg.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 11:19:48 by jsubel            #+#    #+#             */
-/*   Updated: 2022/03/30 15:16:15 by jsubel           ###   ########.fr       */
+/*   Updated: 2022/04/04 08:57:39 by jsubel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ static void	move(int keycode, t_fractal *fractal)
 	else if (keycode == ARROW_RIGHT)
 		changepos_x = fabs(fractal->max.re - fractal->min.re) * 0.05;
 	else if (keycode == ARROW_UP)
-		changepos_y = fabs(fractal->max.im - fractal->min.im) * -0.05;
-	else if (keycode == ARROW_DOWN)
 		changepos_y = fabs(fractal->max.im - fractal->min.im) * 0.05;
+	else if (keycode == ARROW_DOWN)
+		changepos_y = fabs(fractal->max.im - fractal->min.im) * -0.05;
 	fractal->min.re += changepos_x;
 	fractal->max.re += changepos_x;
 	fractal->min.im += changepos_y;

@@ -6,7 +6,7 @@
 /*   By: jsubel <jsubel@student.42wolfsburg.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 10:31:29 by jsubel            #+#    #+#             */
-/*   Updated: 2022/03/30 13:51:51 by jsubel           ###   ########.fr       */
+/*   Updated: 2022/04/05 09:53:38 by jsubel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	(*get_set(char *name)) (t_fractal *fractal)
 	set = NULL;
 	while (i < (sizeof(sets) / sizeof(t_set)))
 	{
-		if (ft_strncmp(name, sets[i].name, ft_strlen(name)) == 0)
+		if (ft_strncmp(sets[i].name, name, ft_strlen(sets[i].name)) == 0)
 			set = sets[i].set;
 		i++;
 	}
