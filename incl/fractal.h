@@ -6,7 +6,7 @@
 /*   By: jsubel <jsubel@student.42wolfsburg.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 15:33:37 by jsubel            #+#    #+#             */
-/*   Updated: 2022/04/05 09:51:07 by jsubel           ###   ########.fr       */
+/*   Updated: 2022/12/08 14:52:53 by jsubel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,24 @@
 
 # include <stdlib.h>
 # include <stdio.h>
-# include <mlx.h>
+# ifndef M_OS
+#  include "../mlx_macos/mlx.h"
+# else
+#  include "../mlx_linux/mlx.h"
+# endif
+
 # include <math.h>
 # include "../libft/libft.h"
 # include <stdint.h>
 
-/* 
+/*
 minilibx image structure
 
 img: image identifier
 addr: address of image
 bpp: bits per pixel
 line_len: number of byters to store one line of image
-endian: little or big 
+endian: little or big
 */
 typedef struct s_image {
 	void	*img;
@@ -41,7 +46,7 @@ typedef struct s_image {
 	int		endian;
 }	t_image;
 
-/* 
+/*
 Complex Number
 
 re: real part
@@ -57,7 +62,7 @@ typedef struct s_color
 	int8_t			channel[4];
 }	t_color;
 
-/* 
+/*
 fractal structure
 
 mlx: holds minilibx instance

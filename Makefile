@@ -39,7 +39,7 @@ ifeq ($(OS), Linux)
 lib:
 	make -C $(LIBFT)
 	make -C $(MLX_LINUX)
-
+	cp $(MLX_LINUX)/libmlx.dylib .
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
 	$(GCC) $(FLAGS) -c -o $@ $^
 
@@ -50,12 +50,13 @@ else
 lib:
 	make -C $(LIBFT)
 	make -C $(MLX_MACOS)
+	cp $(MLX_MACOS)/libmlx.dylib .
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
-	$(GCC) $(FLAGS) -c -o $@ $^
+	$(GCC) $(FLAGS) -D M_OS=MACOS -c -o $@ $^
 
 $(NAME): $(OBJS) $(LIBFT)/libft.a
-	$(GCC) $(FLAGS) $^ -L $(LIBFT) -lmlx -framework OpenGL -framework AppKit -lz -lm -o $(NAME)
+	$(GCC) $(FLAGS) $^ -L $(LIBFT) -Lmlx_macos -lmlx -framework OpenGL -framework AppKit  -lz -lm -O3 -o $(NAME)
 endif
 
 clean:

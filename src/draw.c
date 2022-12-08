@@ -6,7 +6,7 @@
 /*   By: jsubel <jsubel@student.42wolfsburg.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 12:34:45 by jsubel            #+#    #+#             */
-/*   Updated: 2022/03/30 13:58:24 by jsubel           ###   ########.fr       */
+/*   Updated: 2022/12/08 14:31:50 by jsubel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	draw_fractal(t_fractal *frctl)
 		frctl->cnum.im = frctl->max.im - y * frctl->factor.im;
 		x = 0;
 		while (x < WINDOW_WIDTH)
-		{	
+		{
 			frctl->cnum.re = frctl->min.re + x * frctl->factor.re;
 			color = color_fractal(frctl->set(frctl), frctl);
 			mlx_pixel_put_img(frctl, x, y, color);
@@ -55,23 +55,23 @@ void	draw_fractal(t_fractal *frctl)
 
 void	string_put(t_fractal *fractal)
 {
-	char	*str;
-
-	mlx_string_put(fractal->mlx, fractal->win, 25,
-		WINDOW_HEIGHT - 100, 0x444444, "C - Shift Color");
-	mlx_string_put(fractal->mlx, fractal->win, 25,
-		WINDOW_HEIGHT - 70, 0x444444, "R - Reset");
-	mlx_string_put(fractal->mlx, fractal->win, 25,
-		WINDOW_HEIGHT - 40, 0x444444,
-		"+ and - - Change Iteration Depth");
-	mlx_string_put(fractal->mlx, fractal->win,
-		WINDOW_WIDTH - 260, WINDOW_HEIGHT - 70, 0x444444,
-		"Current Iteration Depth:");
-	str = ft_itoa(fractal->max_iteration);
-	mlx_string_put(fractal->mlx, fractal->win,
-		WINDOW_WIDTH - 40, WINDOW_HEIGHT - 40, 0x444444,
-		str);
-	free(str);
+	// char	*str;
+	(void) fractal;
+	// mlx_string_put(fractal->mlx, fractal->win, 25,
+	// 	WINDOW_HEIGHT - 100, 0x444444, "C - Shift Color");
+	// mlx_string_put(fractal->mlx, fractal->win, 25,
+	// 	WINDOW_HEIGHT - 70, 0x444444, "R - Reset");
+	// mlx_string_put(fractal->mlx, fractal->win, 25,
+	// 	WINDOW_HEIGHT - 40, 0x444444,
+	// 	"+ and - - Change Iteration Depth");
+	// mlx_string_put(fractal->mlx, fractal->win,
+	// 	WINDOW_WIDTH - 260, WINDOW_HEIGHT - 70, 0x444444,
+	// 	"Current Iteration Depth:");
+	// str = ft_itoa(fractal->max_iteration);
+	// mlx_string_put(fractal->mlx, fractal->win,
+	// 	WINDOW_WIDTH - 40, WINDOW_HEIGHT - 40, 0x444444,
+	// 	str);
+	// free(str);
 }
 
 t_color	color_fractal(int iteration, t_fractal *fractal)
